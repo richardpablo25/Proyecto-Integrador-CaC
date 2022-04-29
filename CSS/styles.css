@@ -3,4 +3,28 @@
 	margin: 0;
 	padding: 0;
 }
+.product img{
+	width: 200px;
+}
+.card{
+	
+	border-radius: 4px;
+	background-color: #ffffff;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 12), 0 1px 2px rgba(0, 0, 0, 24) ;
+}
+
+
+
+.contenedor{
+	width: 90%;
+	margin: auto;
+	padding: 40px 0;
+	/*armo grid*/
+	display: grid;
+	/*defino ancho columnas*/
+	grid-template-columns: 30% 70%;
+	
+	/*separacion entre columnas*/
+	gap: 20px;
+}
 

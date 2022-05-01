@@ -10,7 +10,59 @@
 </head>
     <body>  
         <header>
-
+          <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+              <img src="https://turbologo.com/articles/wp-content/uploads/2019/07/digital-storm-logo.jpg.webp" style="height:50px; width: 100px; " > 
+              <a class="navbar-brand" href="#">E-Market</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="/HTML/Index.html">Inicio</a>
+                      </li>
+                      <!--<li class="nav-item">
+                          <a class="nav-link" href="./Productos.html">Productos</a>
+                      </li> -->
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Categorías
+                          </a>
+                          
+                          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <li><a class="dropdown-item" href="../HTML/Impresoras.html">Impresoras</a></li>
+                              <li><a class="dropdown-item" href="../HTML/PCS.html">PCs armadas</a></li>
+                              <li><a class="dropdown-item" href="#">Motherboards</a></li>
+                              <li><a class="dropdown-item" href="#">Procesadores</a></li>
+                              <li><a class="dropdown-item" href="#">Memoria RAM</a></li>
+                              <li><a class="dropdown-item" href="#">Discos</a></li>
+                              <li><a class="dropdown-item" href="#">Placas de video</a></li>
+                              <li><a class="dropdown-item" href="#">Gabinetes</a></li>
+                              <li><a class="dropdown-item" href="#">Teclado y mouse</a></li>
+                          </ul>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#">Compras</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#">Perfil</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#">Carrito</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="/HTML/Medios de Pago.html">Medios de Pago</a>
+                      </li>
+                  </ul>
+                  <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Buscar</button>
+                  </form>
+              </div>
+          </div>
+      </nav>
         </header>
 
         <main>
@@ -37,13 +89,30 @@
                 <div class="col-md-3">
                   <label for="validationDefault04" class="form-label">Provincia</label>
                   <select class="form-select" id="validationDefault04" required>
-                    <option selected disabled value="">Choose...</option>
-                    <option>...</option>
+                    <option selected disabled value="">Elegir...</option>
+                    <option>Buenos Aires</option>
+                    <option>Cordoba</option>
+                    <option>Santa Fe</option>
+                    <option>La Pampa</option>
+                    <option>Neuquen</option>
+                    <option>Rio Negro</option>
+                    <option>Chubut</option>
+                    <option>Santa Cruz</option>
+                    <option>Tierra del Fuego</option>
+                    <option>Mendoza</option>
+                    <option>San Luis</option>
+                    <option>Entre Rios</option>
+                    <option>Corrientes</option>
+                    <option>Misiones</option>
+                    <option>San Juan</option>
+                    <option>La Rioja</option>
+                    <option>Catamarca</option>
+                    <option>Tucuman</option>
                   </select>
                 </div>
                 <div class="col-md-3">
                   <label for="validationDefault05" class="form-label">Código Postal</label>
-                  <input type="text" class="form-control" id="validationDefault05" required>
+                  <input type="text" class="form-control" id="validationDefault05" value="" required >
                 </div>
 
                 
@@ -52,7 +121,7 @@
                   <label for="validationDefaultUsername" class="form-label">Nombre usuario</label>
                   <div class="input-group">
                     <span class="input-group-text" id="inputGroupPrepend2">@</span>
-                    <input type="text" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required>
+                    <input type="text" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required value="" required>
                   </div>
                 </div> 
                 

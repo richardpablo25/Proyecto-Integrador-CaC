@@ -28,3 +28,16 @@
 	gap: 20px;
 }
 
+.container-fluid img{
+	padding: 0px 20px;
+}
+
+.container .row .col .card{
+margin-top: 3em;
+padding: 10px;
+}
+
+form{
+max-width: 1140px;
+align-content: initial;
+}

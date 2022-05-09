@@ -63,7 +63,7 @@
             <form class="row g-3 needs-validation" novalidate>
                 <div class="col-md-4" style="text-align: center;">
                   <label for="validationDefault01" class="form-label">Nombre</label>
-                  <input type="text" class="form-control" id="validationDefault01" required>
+                  <input type="text" class="form-control" id="Nombre" required>
                   <div class="valid-feedback">
                     Correcto
                   </div>
@@ -73,7 +73,7 @@
                 </div>
                 <div class="col-md-4" style="text-align: center;">
                   <label for="validationDefault02" class="form-label">Apellido</label>
-                  <input type="text" class="form-control" id="validationDefault02" required>
+                  <input type="text" class="form-control" id="Apellido" required>
                   <div class="valid-feedback">
                     Correcto
                   </div>
@@ -84,7 +84,7 @@
                 
                 <div class="col-md-4" style="text-align: center;">
                   <label for="validationDefault02" class="form-label">Telefono</label>
-                  <input type="text" class="form-control" id="validationDefault03" required>
+                  <input type="text" class="form-control" id="Telefono" required>
                   <div class="valid-feedback">
                     Correcto
                   </div>
@@ -97,7 +97,7 @@
                   <label for="exampleInputEmail1" class="form-label">Email </label>
                   <div class="input-group has-validation">
                     <span class="input-group-text" id="inputGroupPrepend">@</span>
-                    <input type="email" class="form-control" id="validationCustomEmail" required>
+                    <input type="email" class="form-control" id="Email" required>
                     
                     <div class="invalid-feedback">
                       Por favor elija un email correcto.
@@ -106,9 +106,9 @@
                 </div>
                 
                 <div class="col-md-4" style="text-align: center;">
-                  <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                  <label for="exampleInputPassword1" class="form-label">Contrasena</label>
                   <div class="input-group has-validation">
-                    <input type="password" class="form-control" id="validationCustomPassword" required>
+                    <input type="password" class="form-control" id="Contrasena" required>
                     <div class="invalid-feedback">
                       Please choose a correct Password.
                     </div>
@@ -119,11 +119,11 @@
                 
                 <div class="col-md-5" style="text-align: center;" >
                   <label for="validationDefault03" class="form-label">Ciudad</label>
-                  <input type="text" class="form-control" id="validationDefault03" required>
+                  <input type="text" class="form-control" id="Ciudad" required>
                 </div>
                 <div class="col-md-5" style="text-align: center;">
                   <label for="validationDefault04" class="form-label">Provincia</label>
-                  <select class="form-select" id="validationDefault04" required>
+                  <select class="form-select" id="Provincia" required>
                     <option selected disabled value="">Elegir...</option>
                     <option>Buenos Aires</option>
                     <option>Cordoba</option>
@@ -148,7 +148,7 @@
                 <div class="col-md-2" style="text-align: center;" >
                   
                     <label for="validationDefault05" class="form-label">Código Postal</label>
-                    <input type="text" class="form-control" id="validationDefault05" required >
+                    <input type="text" class="form-control" id="Codpost" required >
                     <div class="invalid-feedback">
                       Please provide a valid zip.
                     </div>
@@ -167,12 +167,11 @@
                   </div>
                 </div>
                 <div class="col-12">
-                  <button class="btn btn-primary" type="submit">enviar formulario</button>
+                  <button class="btn btn-primary" type="submit" onclick="funcPasoALocalStorage()" >enviar formulario</button>
                 </div>
               </form>
              
-
-                
+                        
               
 
               

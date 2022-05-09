@@ -42,7 +42,9 @@ function funcPasoALocalStorage() {
     localStorage.setItem("emaillocal", emailForm);
     localStorage.setItem("contralocal", contraForm);
 
-    console.log(localStorage.getItem("emaillocal"));
+    alert(localStorage.getItem("emaillocal"));
+    window.history.back();
+
   }
 
 }

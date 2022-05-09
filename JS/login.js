@@ -6,9 +6,13 @@ const alertEmail = document.getElementById("alertEmail");
 const alertPass = document.getElementById("alertPass");
 
 // SETEAMOS LOS VALORES DE LOGIN POR DEFECTO
-const pass = 1234;
-const email = "mail@mail.com";
+//const pass = 1234;
+//const email = "mail@mail.com";
 
+// traemos de localstorage los valores de mail y contra ingresados en registro.html
+
+const mailsto = localStorage.getItem("emaillocal");
+const contrasto = localStorage.getItem("contralocal");
 
 const pintarMensajeExito = () => {
     alertSuccess.classList.remove("d-none");
@@ -36,6 +40,7 @@ formulario.addEventListener("submit", (e) => {
     // GENERAMOS UN ARRAY CON LOS MENSAJES DE ERROR
     const errores = [];
 
+    /*
     // validar email
     if (userEmail.value != email) {
         userEmail.classList.add("is-invalid");
@@ -51,6 +56,41 @@ formulario.addEventListener("submit", (e) => {
     }
 
     if (parseInt(userPass.value) != pass) {
+        errores.push({
+            tipo: alertPass,
+            msg: "Contraseña Inválida",
+        });
+    } else {
+        alertPass.classList.add("d-none");
+    }
+
+    if (errores.length !== 0) {
+        pintarMensajeError(errores);
+        return;
+    }
+
+    console.log("Formulario enviado con éxito");
+    pintarMensajeExito();
+});
+*/
+
+    //valido mail y contraseña
+
+    
+    if (userEmail.value != mailsto) {
+        userEmail.classList.add("is-invalid");
+
+        errores.push({
+            tipo: alertEmail,
+            msg: "Email Inválido",
+        });
+    } else {
+        userEmail.classList.remove("is-invalid");
+        userEmail.classList.add("is-valid");
+        alertEmail.classList.add("d-none");
+    }
+
+    if (parseInt(userPass.value) != contrasto) {
         errores.push({
             tipo: alertPass,
             msg: "Contraseña Inválida",

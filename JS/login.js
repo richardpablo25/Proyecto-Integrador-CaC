@@ -78,8 +78,9 @@ formulario.addEventListener("submit", (e) => {
 
     
     if (userEmail.value != mailsto) {
+        // si no coinciden agrego la etiqueta invalid a la class
         userEmail.classList.add("is-invalid");
-
+        // agrego objeto con push el tipo y mensaje al array de errores
         errores.push({
             tipo: alertEmail,
             msg: "Email Inválido",
@@ -99,6 +100,7 @@ formulario.addEventListener("submit", (e) => {
         alertPass.classList.add("d-none");
     }
 
+    // si el array de errores tiene datos dentro se ejecuta y lo muestra
     if (errores.length !== 0) {
         pintarMensajeError(errores);
         return;

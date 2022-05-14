@@ -90,8 +90,8 @@ formulario.addEventListener("submit", (e) => {
         userEmail.classList.add("is-valid");
         alertEmail.classList.add("d-none");
     }
-
-    if (parseInt(userPass.value) != contrasto) {
+    // if (parseInt(userPass.value) != contrasto) {
+    if ((userPass.value) != contrasto) {
         errores.push({
             tipo: alertPass,
             msg: "Contraseña Inválida",

@@ -87,13 +87,13 @@ productos.forEach(producto => {
 
 
  //CARRITO - vamos agregando los productos elegidos a un array y cuando confirmamos la compra lo mandamos a la local storage
-
  
+ // productos agregados a carrito
  // definimos array que va a tener los articulos comprados
  let carrito = [];
 
  // creamos en la ls el elemento carrito y le pasamos string
- //localStorage.setItem("carrito", JSON.stringify(carrito));
+ localStorage.setItem("carrito", JSON.stringify(carrito));
 
  // definimos funcion agregar productos a local storage
  const agregarProducto = (producto) =>{

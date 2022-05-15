@@ -50,9 +50,10 @@ const generarcards =(productos) => {
     card.className="card";
     
 }
-
+// recorremos todo el array productos 
 productos.forEach(producto => {
 
+    //creamos etiqueta card
     let cardProductos =document.createElement("div");
     cardProductos.className ="card";
 
@@ -65,9 +66,9 @@ productos.forEach(producto => {
                 <img src="${producto.img}" alt="Card image" width="200px" height="100px">
             <div class="card-body">
                 <p class="card-text">${producto.descripcion}</p>
-                <p class="card-text">${producto.precio}</p>
+                <p class="card-text">Precio $ ${producto.precio}</p>
             </div>
-            <a href="#" class="btn btn-primary" onclick="agregarProducto()">Agregar al Carrito </a>       
+            <a class="btn btn-primary"  onclick="agregarProducto()">Agregar al Carrito </a>       
     `;
     // pasamos el card de string a nodo
     cardProductos.innerHTML = card;
@@ -77,5 +78,25 @@ productos.forEach(producto => {
 
     
 });
- 
+
+
+
+// llamo funcion para generar productos
  generarcards(productos);
+
+
+
+ //CARRITO - vamos agregando los productos elegidos a un array y cuando confirmamos la compra lo mandamos a la local storage
+
+ 
+ // definimos array que va a tener los articulos comprados
+ let carrito = [];
+
+ // creamos en la ls el elemento carrito y le pasamos string
+ //localStorage.setItem("carrito", JSON.stringify(carrito));
+
+ // definimos funcion agregar productos a local storage
+ const agregarProducto = (producto) =>{
+     carrito.push(producto);
+
+ }

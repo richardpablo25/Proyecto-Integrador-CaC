@@ -15,17 +15,17 @@
 
 
 
-.container{
+/* .container{
 	width: 90%;
 	margin: auto;
 	padding: 40px 0;
-	/*armo grid*/
+	armo grid
 	display: grid;
-	/*defino ancho columnas*/
-	grid-template-columns: 30% 70%;
+	defino ancho columnas
+//	//grid-template-columns: 30% 70%;
 	
-	/*separacion entre columnas*/
-	gap: 20px;
+	separacion entre columnas
+//	gap: 20px;
 }
 
 .container-fluid img{

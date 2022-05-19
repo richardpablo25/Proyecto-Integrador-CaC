@@ -1,3 +1,7 @@
+// Limpiamos el localStorage
+localStorage.clear();
+
+
 // Lista de productos a mostrar
 // Array formato JSON 
 
@@ -36,30 +40,39 @@ const productos = [
     }
 
 ];
-// obtengo etiqueta products desde html
-const products =document.getElementById("products");
 
+// Convertimos el array de objetos en un formato tipo JSON
+const productosEnStorage = JSON.stringify(productos);
+
+// Guardamos en el localstorage el array JSON convertido de productos en String
+localStorage.setItem("productos", productosEnStorage);
+
+
+let productosObtenidosDelStorage = JSON.parse(localStorage.getItem("productos"));
+
+// Creamos un array (carrito)
+carrito = [];
 
 const generarcards =(productos) => {
     // obtenemos el div que contendra las cards de productos
-    const cards =document.getElementById("products");
+    let cards =document.getElementById("products");
     
-    cards.classList ="container-fluid";
+    
+    let total = 0;
+    
+   
 
-    const card =document.createElement("div");
-    card.className="card";
-    
-}
 // recorremos todo el array productos 
 productos.forEach(producto => {
 
+    total += producto.precio;
+
     //creamos etiqueta card
     let cardProductos =document.createElement("div");
-    cardProductos.className ="card";
+    cardProductos.className ="card m-3";
 
     //creamos una plantilla que es un string
-    let card = `
-        
+    let card = `        
             <div class="card-body">
                 <h4 class="card-text">${producto.nombre}</h4>
             </div>
@@ -68,35 +81,38 @@ productos.forEach(producto => {
                 <p class="card-text">${producto.descripcion}</p>
                 <p class="card-text">Precio $ ${producto.precio}</p>
             </div>
-            <a class="btn btn-primary"  onclick="agregarProducto()">Agregar al Carrito </a>       
+            <a class="btn btn-primary"  id="cart${producto.id}">Agregar al Carrito </a>       
     `;
-    // pasamos el card de string a nodo
+    // escribimos la plantilla card de ` en la etiqueta div que creamos
     cardProductos.innerHTML = card;
 
-    // agregamos 
-    products.appendChild(cardProductos);
+    // agregamos hijo a padre
+    cards.appendChild(cardProductos);
+    
+    //tomamos el id del elemento que está siendo procesado
+    let productCard = document.getElementById("cart" + producto.id);
 
+    productCard.addEventListener("click", (evento) =>{
+        evento.preventDefault();
+        //agregamos producto al carrito
+        carrito.push(producto);
+    });
     
 });
+    localStorage.setItem("precioTotal", total);
 
+}
+
+const formulario = document.getElementById("formulario");
+
+formulario.addEventListener("submit", (evento) => {
+    evento.preventDefault();
+    localStorage.setItem("Carrito", JSON.stringify(carrito));
+});
 
 
 // llamo funcion para generar productos
  generarcards(productos);
 
 
-
- //CARRITO - vamos agregando los productos elegidos a un array y cuando confirmamos la compra lo mandamos a la local storage
  
- // productos agregados a carrito
- // definimos array que va a tener los articulos comprados
- let carrito = [];
-
- // creamos en la ls el elemento carrito y le pasamos string
- localStorage.setItem("carrito", JSON.stringify(carrito));
-
- // definimos funcion agregar productos a local storage
- const agregarProducto = (producto) =>{
-     carrito.push(producto);
-
- }

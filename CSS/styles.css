@@ -17,3 +17,11 @@ form{
 max-width: 1140px;
 align-content: initial;
 }
+
+.div-formu{
+	max-width: 1140px;
+	margin: 0em 10em;
+}
+.div-formu h2{
+	margin-top: 1em;
+}

@@ -22,7 +22,7 @@
 	armo grid
 	display: grid;
 	defino ancho columnas
-//	//grid-template-columns: 30% 70%;
+	grid-template-columns: 50% 50%;
 	
 	separacion entre columnas
 //	gap: 20px;
@@ -41,3 +41,4 @@ form{
 max-width: 1140px;
 align-content: initial;
 }
+*/

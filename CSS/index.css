@@ -1,0 +1,26 @@
+.masthead-navbar {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2000;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Libre Franklin,sans-serif;
+    color: #1f1f1f;
+  }
+  :root {
+    --swiper-navigation-size: 44px;
+  }
+  :root {
+    --swiper-theme-color: #007aff;
+  }
+  
+  

@@ -103,11 +103,13 @@ productos.forEach(producto => {
 
 }
 
+// capturamos boton finalizar compra y enviamos lo del array carrito al LS
 const formulario = document.getElementById("formulario");
 
 formulario.addEventListener("submit", (evento) => {
     evento.preventDefault();
     localStorage.setItem("Carrito", JSON.stringify(carrito));
+    window.location.href ="../html/Carrito.html";
 });
 
 

@@ -24,8 +24,8 @@ const generarCards = (productos) => {
 
         // Creamos la etiqueta Card
         let cardNueva = document.createElement ("div");
-        cardNueva.className = "card-deck";
-        cardNueva.style="width: 20rem";
+        cardNueva.className = "card";
+        //cardNueva.style="width: 18rem";
         
         let card = `
             <div class="card-body">
@@ -36,7 +36,7 @@ const generarCards = (productos) => {
                 <p class="card-text">${producto.descripcion}</p>
                 <p class="card-text">Precio $ ${producto.precio}</p>
             </div>
-                <a class="btn btn-primary" id="cart${producto.id}">Eliminar</a>
+                <a class="btn btn-secondary" id="cart${producto.id}">Eliminar</a>
             </div>
         `;
         cardNueva.innerHTML =card;
@@ -48,17 +48,25 @@ const generarCards = (productos) => {
         // capturamos evento Eliminar si se activa y sacamos el producto del carrito
         productCard.addEventListener("click", (evento)=>{
             evento.preventDefault();
+            // saco del array el producto eliminado
             carrito.splice(producto - 1, 1);
+            // saco la card eliminada 
             cards.removeChild(cardNueva);
+            // descuento el valor del ítem eliminado al total acumulado
             totalcarrito -= producto.precio;
+            // guardo en LS el valor del carrito restando el ítem eliminado
             localStorage.setItem("preciocarrito", totalcarrito);
+            // mustro en el HTML el valor del carrito con el ítem eliminado restado
+            document.getElementById("muestropreciocarrito").innerHTML = totalcarrito;
         });
      
 
     });
-
+    // guardo precio de carrito en LS
     localStorage.setItem("preciocarrito", totalcarrito);
     
+    //muestro precio de total de carrito
+    document.getElementById("muestropreciocarrito").innerHTML = totalcarrito;
 
 
 }

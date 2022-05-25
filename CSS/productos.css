@@ -3,9 +3,13 @@
 	margin: 0;
 	padding: 0;
 }
-.product img{
+/*.product img{
 	width: 200px;
+}*/
+.card{
+	text-align: center;
 }
+
 .card{
 	
 	border-radius: 4px;

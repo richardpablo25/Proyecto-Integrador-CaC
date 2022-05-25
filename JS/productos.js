@@ -11,7 +11,7 @@ const productos = [
         nombre: "Computadora Intel I3",
         img: "../imagenes/Pc1.jpg",
         precio: 100,
-        descripcion: "Pc Intel I3",
+        descripcion: "Pc Intel I3, 128 Gb RAM, SSD 500GB, kit gabineta mouse y teclado",
         stock: 10
     },
     {
@@ -19,7 +19,7 @@ const productos = [
         nombre: "Computadora Intel I5",
         img: "../imagenes/Pc2.jpg",
         precio: 150,
-        descripcion: "Pc Intel I5",
+        descripcion: "Pc Intel I5, 128 Gb RAM, SSD 500GB, kit gabineta mouse y teclado",
         stock: 10  
     },
     {
@@ -35,7 +35,7 @@ const productos = [
         nombre: "Impresora HP",
         img: "../imagenes/hp.jpg",
         precio: 100,
-        descripcion: "Impresora a color multifunción HP Deskjet Ink Advantage 2775 con wifi blanca 100V/240V",
+        descripcion: "Impresora a color multifunción HP Deskjet Ink  2775 con wifi 100V/240V",
         stock: 10
     },
     {
@@ -43,7 +43,7 @@ const productos = [
         nombre: "Computadora Intel I3",
         img: "../imagenes/Pc1.jpg",
         precio: 100,
-        descripcion: "Pc Intel I3",
+        descripcion: "Pc Intel I3, 128 Gb RAM, SSD 500GB, kit gabineta mouse y teclado",
         stock: 10
     },
     {
@@ -51,7 +51,7 @@ const productos = [
         nombre: "Computadora Intel I5",
         img: "../imagenes/Pc2.jpg",
         precio: 150,
-        descripcion: "Pc Intel I5",
+        descripcion: "Pc Intel I5, 128 Gb RAM, SSD 500GB, kit gabineta mouse y teclado",
         stock: 10  
     },
     {
@@ -67,7 +67,7 @@ const productos = [
         nombre: "Impresora HP",
         img: "../imagenes/hp.jpg",
         precio: 100,
-        descripcion: "Impresora a color multifunción HP Deskjet Ink Advantage 2775 con wifi blanca 100V/240V",
+        descripcion: "Impresora a color multifunción HP Deskjet Ink  2775 con wifi 100V/240V",
         stock: 10
     }
 ];
@@ -88,61 +88,63 @@ const generarcards =(productos) => {
     // obtenemos el div que contendra las cards de productos
     let cards =document.getElementById("products");
     
-    
+    // inicializamos variable total en 0 para ir acumulando el precio de todos los productos.
     let total = 0;
-    
-   
+     
 
-// recorremos todo el array productos 
-productos.forEach(producto => {
+    // recorremos todo el array productos 
+    productos.forEach(producto => {
 
-    total += producto.precio;
+        total += producto.precio;
 
-    //creamos etiqueta card
-    let cardProductos =document.createElement("div");
-    cardProductos.className ="card-deck" ;
-    cardProductos.style= "width: 20rem";
+        //creamos etiqueta card
+        let cardProductos =document.createElement("div");
+        cardProductos.className ="card-deck" ;
+        cardProductos.style= "width: 20rem";
 
-    //creamos una plantilla que es un string
-    let card = `        
-            <div class="card-body">
-                <h4 class="card-text">${producto.nombre}</h4>
-            </div>
-                <img src="${producto.img}" alt="Card image" width="200px" height="100px">
-            <div class="card-body">
-                <p class="card-text">${producto.descripcion}</p>
-                <p class="card-text">Precio $ ${producto.precio}</p>
-            </div>
-            <a class="btn btn-primary"  id="cart${producto.id}">Agregar al Carrito </a>       
-    `;
-    // escribimos la plantilla card de ` en la etiqueta div que creamos
-    cardProductos.innerHTML = card;
+        //creamos una plantilla que es un string
+        let card = `        
+                <div class="card-body">
+                    <h4 class="card-text text-center">${producto.nombre} </h4>
+                </div>
+                    <img src="${producto.img}" alt="Card image"  width="200px" height="100px">
+                <div class="card-body">
+                    <p class="card-text text-center">${producto.descripcion}</p>
+                    <p class="card-text">Precio $ ${producto.precio}</p>
+                </div>
+                <a class="btn btn-secondary"  id="cart${producto.id}">Agregar al Carrito </a>       
+        `;
+        // escribimos la plantilla card de ` en la etiqueta div que creamos
+        cardProductos.innerHTML = card;
 
-    // agregamos hijo a padre
-    cards.appendChild(cardProductos);
-    
-    //tomamos el id del elemento que está siendo procesado
-    let productCard = document.getElementById("cart" + producto.id);
+        // agregamos hijo a padre
+        cards.appendChild(cardProductos);
+        
+        //tomamos el id del elemento que está siendo procesado
+        let productCard = document.getElementById("cart" + producto.id);
 
-    productCard.addEventListener("click", (evento) =>{
-        evento.preventDefault();
-        //agregamos producto al carrito
-        carrito.push(producto);
+        // escuchamos si se presiona boton para agregar producto a carrito
+        productCard.addEventListener("click", (evento) =>{
+            evento.preventDefault();
+            //agregamos producto al carrito
+            carrito.push(producto);
+            
+        });
+        
     });
-    
-});
-    localStorage.setItem("precioTotal", total);
+        //grabamos precio total en LS
+        localStorage.setItem("precioTotal", total);
 
-}
+    }
 
-// capturamos boton finalizar compra y enviamos lo del array carrito al LS
-const formulario = document.getElementById("formulario");
+    // capturamos boton finalizar compra y enviamos lo del array carrito al LS
+    const formulario = document.getElementById("formulario");
 
-formulario.addEventListener("submit", (evento) => {
-    evento.preventDefault();
-    localStorage.setItem("Carrito", JSON.stringify(carrito));
-    window.location.href ="../html/Carrito.html";
-});
+    formulario.addEventListener("submit", (evento) => {
+        evento.preventDefault();
+        localStorage.setItem("Carrito", JSON.stringify(carrito));
+        window.location.href ="../html/Carrito.html";
+    });
 
 
 // llamo funcion para generar productos

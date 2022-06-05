@@ -41,11 +41,10 @@ function funcPasoALocalStorage() {
 
     localStorage.setItem("emaillocal", emailForm);
     localStorage.setItem("contralocal", contraForm);
-
-    //alert(localStorage.getItem("emaillocal"));
-    window.history.back();
-
+    alert("Usuario Ingresado");
+    window.location.href ="./index.html";
   }
 
 }
 
+funcPasoALocalStorage();

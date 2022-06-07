@@ -17,9 +17,9 @@
 		  form.classList.add('was-validated')
 		}, false)
 	  })
-  })()
+  });
 
-
+  funcConfTarjeta();
 
   function funcConfTarjeta(){
 	const nombreForm = document.getElementById("nombre").value;
@@ -40,9 +40,11 @@
 	  localStorage.setItem("numero", numeroForm);
 	  localStorage.setItem("cvc", cvcForm);
 	  alert("Taejeta Confirmada");
-	  window.location.href ="../index.html";
+	  window.location.href ="/index.html";
+	  
+	  
 	}
   
   }
   
-  funcConfTarjeta();
+ 

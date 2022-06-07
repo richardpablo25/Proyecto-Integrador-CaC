@@ -106,6 +106,11 @@ formulario.addEventListener("submit", (e) => {
         return;
     }
 
-    console.log("Formulario enviado con éxito");
-    pintarMensajeExito();
+    //console.log("Formulario enviado con éxito");
+    //pintarMensajeExito();
+    
+    //datos correctos te mando a Inicio
+    alert("Ingreso de datos Correctos");
+    window.location.href ="/index.html";
+
 });

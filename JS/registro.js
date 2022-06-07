@@ -42,9 +42,9 @@ function funcPasoALocalStorage() {
     localStorage.setItem("emaillocal", emailForm);
     localStorage.setItem("contralocal", contraForm);
     alert("Usuario Ingresado");
-    window.location.href ="./index.html";
+    window.location.href ="../html/login.html";
   }
 
-}
+};
 
 funcPasoALocalStorage();

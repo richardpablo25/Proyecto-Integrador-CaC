@@ -40,34 +40,34 @@ const productos = [
     },
     {
         id: 5,
-        nombre: "Computadora Intel I3",
-        img: "../imagenes/Pc1.jpg",
+        nombre: "Volante",
+        img: "../imagenes/tumb_30260_1.jpeg",
         precio: 100,
-        descripcion: "Pc Intel I3, 128 Gb RAM, SSD 500GB, kit gabineta mouse y teclado",
+        descripcion: "Volante Logitech G1000 con pedalera para PS4 y PC",
         stock: 10
     },
     {
         id: 6,
-        nombre: "Computadora Intel I5",
-        img: "../imagenes/Pc2.jpg",
+        nombre: "Motherboard",
+        img: "../imagenes/tumb_34214_5.jpeg",
         precio: 150,
-        descripcion: "Pc Intel I5, 128 Gb RAM, SSD 500GB, kit gabineta mouse y teclado",
+        descripcion: "Motherboard Intel 1200 11 gen Gamming ",
         stock: 10  
     },
     {
         id: 7,
-        nombre: "Impresora Canon",
-        img: "../imagenes/canon.jpg",
+        nombre: "Notebook",
+        img: "../imagenes/tumb_40990_1.jpeg",
         precio: 100,
-        descripcion: "Impresora a color multifunción Canon Pixma G3110 con wifi negra 110V/220V",
+        descripcion: "Notebook HP AERO I5 8 Gb ram SSD 512 Gb Garantía ",
         stock: 10
     },
     {
         id: 8,
-        nombre: "Impresora HP",
-        img: "../imagenes/hp.jpg",
+        nombre: "Placa Video",
+        img: "../imagenes/tumb_placa-video-AMD-Radeon-OC_39803_1.jpeg",
         precio: 100,
-        descripcion: "Impresora a color multifunción HP Deskjet Ink  2775 con wifi 100V/240V",
+        descripcion: "Placa de video LHR Geforce RTX 3090 24 Gb Phantom",
         stock: 10
     }
 ];
@@ -101,7 +101,7 @@ const generarcards =(productos) => {
         let cardProductos =document.createElement("div");
         cardProductos.className ="card-deck" ;
         cardProductos.style= "width: 20rem";
-
+        
         //creamos una plantilla que es un string
         let card = `        
                 <div class="card-body">

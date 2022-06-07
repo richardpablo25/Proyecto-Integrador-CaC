@@ -24,8 +24,9 @@ const generarCards = (productos) => {
 
         // Creamos la etiqueta Card
         let cardNueva = document.createElement ("div");
-        cardNueva.className = "card";
-        //cardNueva.style="width: 18rem";
+        cardNueva.className ="card-deck" ;
+        cardNueva.style= "width: 20rem";
+        
         
         let card = `
             <div class="card-body">
@@ -71,10 +72,12 @@ const generarCards = (productos) => {
 
 }
 //console.log("total compra: ", totalcarrito);
+
 generarCards(carrito);
 
-const formulario = document.getElementById("formulario");
 // capturamos boton finalizar de carrito para hacer la compra
+const formulario = document.getElementById("formulario");
+
 formulario.addEventListener("submit", (evento) => {
     evento.preventDefault();
     localStorage.setItem("Carrito", JSON.stringify(carrito));
